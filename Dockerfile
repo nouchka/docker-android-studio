@@ -8,6 +8,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 USER root
 RUN apt-get update --fix-missing && \
 	apt-get update && \
-	apt-get install -y -q npm
+	curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash - && \
+	apt-get install nodejs
 
 RUN npm install -g react-native-cli
