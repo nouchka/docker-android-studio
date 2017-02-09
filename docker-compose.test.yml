@@ -1,0 +1,16 @@
+sut:
+  build: .
+  entrypoint: /bin/true
+  environment:
+    - DISPLAY=unix$DISPLAY
+  volumes:
+    - /tmp/.X11-unix:/tmp/.X11-unix
+    - $XAUTHORITY:/home/ubuntu/.Xauthority
+    - /dev/kvm:/dev/kvm
+    - /dev/bus/usb:/dev/bus/usb
+    - $HOME/Desktop/workspace/android:/home/ubuntu/projects
+    - $HOME/Desktop/workspace/android/.sdk:/opt/android-sdk
+    - $HOME/Desktop/workspace/android/.android:/home/ubuntu/.android
+    - $HOME/Desktop/workspace/android/.studio:/home/ubuntu/.AndroidStudio1.5
+  net: host
+  privileged: true
